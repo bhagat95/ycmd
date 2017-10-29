@@ -50,8 +50,8 @@ std::string GetWordBoundaryChars( const std::string &text ) {
                              IsUppercase( text[ i ] ) &&
                              !IsUppercase( text[ i - 1 ] );
     bool is_alpha_after_punctuation = i > 0 &&
-                                      ispunct( text[ i - 1 ] ) &&
-                                      isalpha( text[ i ] );
+                                      (ispunct( text[ i - 1 ] ) &&
+                                      isalpha( text[ i ] ));
 
     if ( is_first_char_but_not_punctuation ||
          is_good_uppercase ||
